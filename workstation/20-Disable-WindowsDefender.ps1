@@ -15,4 +15,6 @@ if ($DefenderData)
     New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\" -Name "DisableAntiSpyware" -PropertyType DWORD -value 0x1 -Force
     New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\" -Name "DisableAntivirus" -PropertyType DWORD -value 0x1 -Force
 
+    $RequiresRestart = $True
 }
+
