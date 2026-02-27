@@ -18,7 +18,7 @@ if ($IsDefault)
     New-ADOrganizationalUnit -Name 'Production'
     New-ADOrganizationalUnit -Name 'New Objects'
 
-    cd "OU=Production,$RootDN"
+    cd "AD:\OU=Production,$RootDN"
     New-ADOrganizationalUnit -Name 'Clients'
     New-ADOrganizationalUnit -Name 'Servers'
     New-ADOrganizationalUnit -Name 'Users'
@@ -45,6 +45,7 @@ if ($IsDefault)
     # Reset to scriptroot path
     cd "$PSScriptRoot\.."
 }
+
 
 
 
