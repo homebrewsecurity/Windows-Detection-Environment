@@ -6,12 +6,13 @@ $ScriptName = $MyInvocation.MyCommand.Name
 # Code
 
 # Installs the feature and imports ADDSDeployment
-Install-WindowsFeature 'AD-Domain-Services' -IncludeManagementTools
+Install-WindowsFeature 'AD-Domain-Services' -IncludeManagementTools | Out-Null
 Import-Module ADDSDeployment
 
 # Promotes to DC and created forest
 Install-ADDSForest -DomainName $DomainData.DomainName -InstallDNS:$true
 
 $Data.RequiresRestart = $True
+
 
 
