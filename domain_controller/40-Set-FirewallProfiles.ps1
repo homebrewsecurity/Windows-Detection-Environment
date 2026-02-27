@@ -8,5 +8,6 @@ $ScriptName = $MyInvocation.MyCommand.Name
 foreach ($Profile in $FirewallProfileData.GetEnumerator())
 {
     $Splat = $Profile.Value
-    Set-NetFirewallProfile @Splat -Profile $Profile.Name -ErrorAction Continue
+    Set-NetFirewallProfile @Splat -Profile $Profile.Name -ErrorAction Continue | Out-Null
 }
+
