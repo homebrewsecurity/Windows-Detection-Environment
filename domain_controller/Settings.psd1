@@ -23,7 +23,7 @@
     }
 
     # Windows Defender disablement
-    DisableWindowsDefender = $True                                   # Set to $False if you'd like to keep Windows Defender enabled
+    # DisableWindowsDefender = $True                                   # Set to $False if you'd like to keep Windows Defender enabled; WIP
 
     # Domain information
     Domain = @{
@@ -203,5 +203,6 @@
     }
 
 }
+
 
 
