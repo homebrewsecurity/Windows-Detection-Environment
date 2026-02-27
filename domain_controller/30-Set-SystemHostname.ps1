@@ -6,6 +6,7 @@ $ScriptName = $MyInvocation.MyCommand.Name
 # Code
 if (([System.Net.Dns]::GetHostName()) -ne $ComputerNameData)
 {
-    Rename-Computer $ComputerNameData
+    Rename-Computer $ComputerNameData | Out-Null
     $Data.RequiresRestart = $True
 }
+
