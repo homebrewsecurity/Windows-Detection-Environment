@@ -24,9 +24,9 @@ For the domain controller:
 
 ```.\Start-SystemConfiguration.ps1 -ScriptsFolder .\domain_controller\```
 
-The system will reboot on its own for certain configurations. After restarting, run the same command until a green orchestration message appears in the console. The script will remember the last script that was run and will not execute previously ran commands.
+The system will reboot on its own for certain configurations. After restarting, run the same command until a green orchestration message appears in the console. Some settings need to be submitted manually, such as the DSRM password when setting up the AD forest. The script will remember the last script that was run and will not execute previously ran commands.
 
 # Notes
 I created this script to speed up the deployment of my own lab environment after realizing the number of times I repeated the setup. However, due to the modularity of the system, users can add in their own scripts under either the domain_controller or workstation folders by incrementing the number in the filename. The orchestration script will execute all .ps1 files in ascending order given the argument specified in the -ScriptsFolder parameter.
 
-The script sets the system hostname, configures the network interfaces, adds standard firewall rules, and configures domain-specific settings. For domain controllers, additional steps are executed, including creating standard OUs, users, configuring the central store, and redirecting new computer objects to a New Objects OU.
+The script sets the system hostname, configures the network interfaces, adds standard firewall rules, and configures domain-specific settings. For domain controllers, additional steps are executed, including creating a new forest, creating standard OUs, users, configuring the central store, and redirecting new computer objects to a New Objects OU.
