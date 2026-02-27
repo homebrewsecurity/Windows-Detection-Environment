@@ -8,7 +8,7 @@ $ScriptName = $MyInvocation.MyCommand.Name
 if ($IsDefault)
 {
     # Import AD Module
-    Import-Module ActiveDirectory
+    Import-Module ActiveDirectory | Out-Null
 
     # Get DN data and move to drive location
     $RootDN = (Get-ADDomain).DistinguishedName
@@ -25,7 +25,7 @@ if ($IsDefault)
     New-ADOrganizationalUnit -Name 'Groups'
 
     # Redirect computers to the New Objects OU
-    redircmp.exe "OU=New Objects,$RootDN"
+    redircmp.exe "OU=New Objects,$RootDN" | Out-Null
 
     # Create new central policy definitions store
     $DefaultPolicyPath = 'C:\Windows\PolicyDefinitions'
@@ -45,6 +45,7 @@ if ($IsDefault)
     # Reset to scriptroot path
     cd "$PSScriptRoot\.."
 }
+
 
 
 
