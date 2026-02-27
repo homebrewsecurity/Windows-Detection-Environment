@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $AccountData = $Data.Accounts
 $ScriptName = $MyInvocation.MyCommand.Name
 
@@ -37,4 +37,5 @@ foreach ($User in $AccountData.GetEnumerator())
     {
         Add-LocalGroupMember -Group "Administrators" -Member $User -ErrorAction SilentlyContinue
     }
+
 }
