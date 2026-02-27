@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $ComputerNameData = $Data.ComputerName
 $ScriptName = $MyInvocation.MyCommand.Name
 
@@ -7,5 +7,5 @@ $ScriptName = $MyInvocation.MyCommand.Name
 if (([System.Net.Dns]::GetHostName()) -ne $ComputerNameData)
 {
     Rename-Computer $ComputerNameData
-    $RequiresRestart = $True
+    $Data.RequiresRestart = $True
 }
