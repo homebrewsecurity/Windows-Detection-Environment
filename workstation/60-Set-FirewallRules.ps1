@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $FirewallRuleData = $Data.FirewallRules
 $ScriptName = $MyInvocation.MyCommand.Name
 
@@ -14,4 +14,5 @@ foreach ($Rule in $FirewallRuleData.GetEnumerator())
 {
     $Splat = $Rule.Value
     New-NetFirewallRule @Splat -ErrorAction SilentlyContinue
+
 }
