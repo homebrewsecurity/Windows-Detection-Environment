@@ -5,8 +5,6 @@ $DomainData = $Data.Domain
 $ScriptName = $MyInvocation.MyCommand.Name
 
 # Code
-$IsInstalled = (Get-WindowsFeature 'AD-Domain-Services' | Where-Object {$_.InstallState -eq 'Installed'})
-
 if ($IsDefault)
 {
     # Import AD Module
@@ -17,14 +15,14 @@ if ($IsDefault)
     cd "AD:\$RootDN"
 
     # Create new OU structure
-    New-ADOrganizationalUnit -Name 'Production' -ProtectFromAccidentalDeletion:$True
-    New-ADOrganizationalUnit -Name 'New Objects' -ProtectFromAccidentalDeletion:$True
+    New-ADOrganizationalUnit -Name 'Production'
+    New-ADOrganizationalUnit -Name 'New Objects'
 
     cd "OU=Production,$RootDN"
-    New-ADOrganizationalUnit -Name 'Clients' -ProtectFromAccidentalDeletion:$True
-    New-ADOrganizationalUnit -Name 'Servers' -ProtectFromAccidentalDeletion:$True
-    New-ADOrganizationalUnit -Name 'Users' -ProtectFromAccidentalDeletion:$True
-    New-ADOrganizationalUnit -Name 'Groups' -ProtectFromAccidentalDeletion:$True
+    New-ADOrganizationalUnit -Name 'Clients'
+    New-ADOrganizationalUnit -Name 'Servers'
+    New-ADOrganizationalUnit -Name 'Users'
+    New-ADOrganizationalUnit -Name 'Groups'
 
     # Redirect computers to the New Objects OU
     redircmp.exe "OU=New Objects,$RootDN"
@@ -40,7 +38,7 @@ if ($IsDefault)
     # Create new domain admin & user account
     New-ADUser -Name "StandardUser" -Enabled:$True -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123" -Force)
 
-    $AdminUser = New-ADUser -Name "DomainAdmin" -Enabled:$True -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123" -Force)
+    New-ADUser -Name "DomainAdmin" -Enabled:$True -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123" -Force)
     Start-Sleep 1
-    Add-ADGroupMember -Identity "Domain Admins" -Members $AdminUser
+    Add-ADGroupMember -Identity "Domain Admins" -Members "DomainAdmin"
 }
