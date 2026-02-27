@@ -41,4 +41,8 @@ if ($IsDefault)
     New-ADUser -Name "DomainAdmin" -Enabled:$True -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123" -Force)
     Start-Sleep 1
     Add-ADGroupMember -Identity "Domain Admins" -Members "DomainAdmin"
+
+    # Reset to scriptroot path
+    cd $PSScriptRoot\..
 }
+
