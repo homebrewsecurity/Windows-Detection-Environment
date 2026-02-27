@@ -6,11 +6,13 @@ Download the files as a zipped archive or clone the repository to your system. C
 
 <img width="744" height="385" alt="image" src="https://github.com/user-attachments/assets/71714be3-a5d0-4e15-88a3-bd7252ba1b38" />
 
-Transfer a copy of the scripts to both machines once ISOs are installed. Open 'Settings.psd1' under both script folders and change configuration settings as necessary. Open an elevated PowerShell prompt to set the execution policy (default is 'Restricted'):
+Transfer a copy of the scripts to both machines once the images are installed. Open 'Settings.psd1' under both script folders and change configuration settings as necessary. Open an elevated PowerShell prompt to set the execution policy (default is 'Restricted'):
 
 ```Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine```
 
-**WARNING: The above command is not a safe or recommended configuration for execution policies. Only use this command in a testing/lab environment.**
+**WARNING: The above command is not a safe or recommended configuration for execution policies. Only use this command in testing/lab environments.**
+
+No further configuration to the operating system is needed, as the scripts will configure the rest.
 
 Navigate to the directory storing the 'Start-SystemConfiguration.ps1' script. Depending on which machine is being configured, run the script with the -ScriptsFolder parameter.
 
