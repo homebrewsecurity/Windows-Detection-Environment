@@ -12,8 +12,9 @@ if (-not $AvailableInterface)
 }
 else
 {
-    New-NetIPAddress -IPAddress $NetworkData.IPv4Address -PrefixLength $NetworkData.CIDRSubnetMask -ifIndex $AvailableInterface.ifIndex -DefaultGateway $NetworkData.Gateway -AddressFamily IPv4
-    Set-DnsClientServerAddress -InterfaceIndex $AvailableInterface.ifIndex -ServerAddresses $NetworkData.DNSServer
+    New-NetIPAddress -IPAddress $NetworkData.IPv4Address -PrefixLength $NetworkData.CIDRSubnetMask -ifIndex $AvailableInterface.ifIndex -DefaultGateway $NetworkData.Gateway -AddressFamily IPv4 | Out-Null
+    Set-DnsClientServerAddress -InterfaceIndex $AvailableInterface.ifIndex -ServerAddresses $NetworkData.DNSServer | Out-Null
 }
+
 
 
