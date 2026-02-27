@@ -9,7 +9,7 @@
 
 @{
     # Sets the reboot boolean variable
-    $RequiresRestart = $False
+    RequiresRestart = $False
     
     # Self-explanatory; sets the computername
     ComputerName = "deaddc01"
@@ -203,4 +203,5 @@
     }
 
 }
+
 
