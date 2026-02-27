@@ -13,9 +13,9 @@
 
     # Network information
     Network = @{
-        IPv4Address = "172.20.0.10"                                   # Default is 172.20.0.5/24
+        IPv4Address = "172.20.0.10"                                   # Default is 172.20.0.10/24
         CIDRSubnetMask = "24"                                        # Numerical values only, no / or subnet masks
-        Gateway = "0.0.0.0"                                      # Default environment has no gateway
+        Gateway = "172.20.0.1"                                      # Default environment has no gateway
         DNSServer = "208.67.222.222"                                    # Default is Cisco Umbrella DNS servers (safer than 8.8.8.8)
     }
 
@@ -198,4 +198,5 @@
             LocalPort = 123
         }
     }
+
 }
