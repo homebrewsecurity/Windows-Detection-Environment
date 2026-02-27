@@ -8,6 +8,9 @@
 #>
 
 @{
+    # Sets the reboot boolean variable
+    $RequiresRestart = $False
+    
     # Self-explanatory; sets the computername
     ComputerName = "deaddc01"
 
@@ -200,3 +203,4 @@
     }
 
 }
+
