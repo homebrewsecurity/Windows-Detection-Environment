@@ -15,7 +15,7 @@
     Network = @{
         IPv4Address = "172.20.0.5"                                   # Default is 172.20.0.5/24
         CIDRSubnetMask = "24"                                        # Numerical values only, no / or subnet masks
-        Gateway = "172.20.0.10"                                      # Default environment has no gateway; if you're using inetsim, set that machine's IP here. Otherwise, the Domain Controller is currently set at the gateway
+        Gateway = "172.20.0.1"                                      # Default environment has no gateway; if you're using inetsim, set that machine's IP here. Otherwise, the Domain Controller is currently set at the gateway
         DNSServer = "172.20.0.10"                                    # Default is the ADDS set one in DE-ADDC (172.20.0.10)
     }
 
@@ -165,4 +165,5 @@
         NTObjectManager = $True                    # PowerShell module for exploring the Windows kernel and investigating security related artifacts
     }
     #>
+
 }
