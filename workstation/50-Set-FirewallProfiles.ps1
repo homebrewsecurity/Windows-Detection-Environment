@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $FirewallProfileData = $Data.FirewallProfiles
 $ScriptName = $MyInvocation.MyCommand.Name
 
@@ -9,4 +9,5 @@ foreach ($Profile in $FirewallProfileData.GetEnumerator())
 {
     $Splat = $Profile.Value
     Set-NetFirewallProfile @Splat -Profile $Profile.Name -ErrorAction Continue
+
 }
