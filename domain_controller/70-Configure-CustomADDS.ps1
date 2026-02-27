@@ -43,6 +43,7 @@ if ($IsDefault)
     Add-ADGroupMember -Identity "Domain Admins" -Members "DomainAdmin"
 
     # Reset to scriptroot path
-    cd $PSScriptRoot\..
+    cd "$PSScriptRoot\.."
 }
+
 
