@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $NetworkData = $Data.Network
 $ScriptName = $MyInvocation.MyCommand.Name
 
@@ -15,4 +15,5 @@ else
     New-NetIPAddress -IPAddress $NetworkData.IPv4Address -PrefixLength $NetworkData.CIDRSubnetMask -ifIndex $AvailableInterface.ifIndex -DefaultGateway $NetworkData.Gateway -AddressFamily IPv4
     Set-DnsClientServerAddress -InterfaceIndex $AvailableInterface.ifIndex -ServerAddresses $NetworkData.DNSServer
 }
+
 
