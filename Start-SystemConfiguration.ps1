@@ -22,7 +22,6 @@ if (-not (Test-Path $ScriptsFolder))
 
 # Variables
 
-$RequiresRestart = $False
 $Data = Import-PowerShellDataFile -Path "$ScriptsFolder\Settings.psd1" -ErrorAction Stop
 $Scripts = (Get-ChildItem -Recurse $ScriptsFolder -Filter "*.ps1" | Sort-Object).FullName
 
@@ -74,7 +73,7 @@ foreach ($Script in $ExecutingScripts)
     $LastScriptDataFile | Out-File -Force -FilePath "$ScriptsFolder\LastScript.psd1"
 
     # Restarts machine if required
-    if ($RequiresRestart)
+    if ($Data.RequiresRestart)
     {
         Write-Host "[!] ORCHESTRATOR: Restarting computer in 10 seconds..." -ForegroundColor Yellow
         Start-Sleep -Seconds 10
@@ -84,6 +83,7 @@ foreach ($Script in $ExecutingScripts)
 
 # Ends with successful message
 Write-Host "[+] ORCHESTRATOR: Successfully ran all scripts." -ForegroundColor Green
+
 
 
 
