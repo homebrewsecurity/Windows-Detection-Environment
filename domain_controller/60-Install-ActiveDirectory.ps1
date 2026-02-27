@@ -18,6 +18,6 @@ else
 
     # Promotes to DC and created forest
     Install-ADDSForest -DomainName $DomainData.DomainName -InstallDNS:$true
-}
 
-$RequiresRestart = $True
+    $RequiresRestart = $True
+}
