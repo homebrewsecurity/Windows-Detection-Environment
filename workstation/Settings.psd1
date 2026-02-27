@@ -9,7 +9,7 @@
 
 @{
     # Sets the restart variable
-    $RequiresRestart = $False
+    RequiresRestart = $False
     
     # Self-explanatory; sets the computername
     ComputerName = "dewrk01"
@@ -170,4 +170,5 @@
     #>
 
 }
+
 
