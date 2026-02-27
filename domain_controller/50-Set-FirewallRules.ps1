@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $FirewallRuleData = $Data.FirewallRules
 $ScriptName = $MyInvocation.MyCommand.Name
 
