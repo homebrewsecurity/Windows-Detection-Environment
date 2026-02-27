@@ -26,3 +26,5 @@ The system will reboot on its own for certain configurations. After restarting, 
 
 # Notes
 I created this script to speed up the deployment of my own lab environment after realizing the number of times I repeated the setup. However, due to the modularity of the system, users can add in their own scripts under either the domain_controller or workstation folders by incrementing the number in the filename. The orchestration script will execute all .ps1 files in ascending order given the argument specified in the -ScriptsFolder parameter.
+
+The script sets the system hostname, configures the network interfaces, adds standard firewall rules, and configures domain-specific settings. For domain controllers, additional steps are executed, including creating standard OUs, users, configuring the central store, and redirecting new computer objects to a New Objects OU.
