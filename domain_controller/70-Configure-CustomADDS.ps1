@@ -1,5 +1,5 @@
 # Required Variables
-$RequiresRestart = $False
+$Data.RequiresRestart = $False
 $IsDefault = $Data.IncludeDefaultConfiguration
 $DomainData = $Data.Domain
 $ScriptName = $MyInvocation.MyCommand.Name
@@ -45,5 +45,6 @@ if ($IsDefault)
     # Reset to scriptroot path
     cd "$PSScriptRoot\.."
 }
+
 
 
