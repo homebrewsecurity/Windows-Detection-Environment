@@ -1,7 +1,7 @@
 # Windows-Detection-Environment
 This repository provides a PowerShell orchestration script along with a modular method of applying system configurations via psuedo infrastructure-as-code for the purpose of quickly deploying an isolated virtual Windows detection engineering environment. Scripts found in this repository are not intended for production use and should only be deployed in isolated lab environments. These scripts are not secure; users are responsible for the security, management, and oversight of their own systems and environments.
 
-# Setup
+# Usage
 Download the files as a zipped archive or clone the repository to your system. Create two virtual machines, one Windows 11 client and one Windows Server (at least 2022). Create a private virtual network and allocate an appropriately sized subnet. Assign both virtual machines' network interfaces to the same private network. An example topology is provided below.
 
 <img width="744" height="385" alt="image" src="https://github.com/user-attachments/assets/71714be3-a5d0-4e15-88a3-bd7252ba1b38" />
